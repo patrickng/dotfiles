@@ -48,14 +48,16 @@ source $ZSH/oh-my-zsh.sh
 unsetopt SHARE_HISTORY
 
 # Customize to your needs...
-#export HTTP_PROXY="http://127.0.0.1:3128" 
-#export HTTPS_PROXY="http://127.0.0.1:3128"
-#export http_proxy="http://127.0.0.1:3128"
-#export https_proxy="http://127.0.0.1:3128"
+export HTTP_PROXY="http://127.0.0.1:3128" 
+export HTTPS_PROXY="http://127.0.0.1:3128"
+export http_proxy="http://127.0.0.1:3128"
+export https_proxy="http://127.0.0.1:3128"
 
 alias subl='open -a "Sublime Text"'
 alias subl2='open -a "Sublime Text 2"'
 alias ll='ls -la'
+alias regenkeys='cntlm -H -u png2 -d CORP'
+alias editcntlm='vim /usr/local/etc/cntlm.conf'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
