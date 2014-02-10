@@ -40,7 +40,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rails3 rails4 ruby brew bundler gem git-extras npm rvm sublime)
+plugins=(git osx rails ruby brew bundler gem git-extras npm rvm sublime)
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source $ZSH/oh-my-zsh.sh
@@ -61,7 +61,7 @@ alias editcntlm='vim /usr/local/etc/cntlm.conf'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-function serve {
+function server {
   port="${1:-3000}"
   open "http://localhost:${port}/" && ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 }
