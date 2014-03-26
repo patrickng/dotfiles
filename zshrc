@@ -41,15 +41,13 @@ DISABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx rails ruby brew bundler gem git-extras npm rvm sublime)
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 source $ZSH/oh-my-zsh.sh
 
 unsetopt SHARE_HISTORY
 
 # Customize to your needs...
-export HTTP_PROXY="http://127.0.0.1:3128" 
-export HTTPS_PROXY="http://127.0.0.1:3128"
 export http_proxy="http://127.0.0.1:3128"
 export https_proxy="http://127.0.0.1:3128"
 
@@ -66,6 +64,8 @@ function server {
   open "http://localhost:${port}/" && ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 }
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
