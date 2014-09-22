@@ -69,3 +69,9 @@ export PATH="$GEM_HOME/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+
+if [ -f ~/.env ]; then
+  source ~/.env
+else
+  print "404: ~/.env not found."
+fi
