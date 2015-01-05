@@ -10,7 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'benmills/vimux'
-Plugin 'https://github.com/Lokaltog/vim-powerline'
+Plugin 'https://github.com/bling/vim-airline'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -59,3 +59,16 @@ noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+     if bufwinnr(t:NERDTreeBufName) != -1
+       if winnr("$") == 1
+         q
+       endif
+     endif
+  endif
+endfunction
