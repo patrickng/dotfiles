@@ -10,7 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'benmills/vimux'
-Plugin 'https://github.com/bling/vim-airline'
+" Plugin 'https://github.com/bling/vim-airline'
+" Plugin 'https://github.com/Lokaltog/vim-powerline.git'
+Plugin 'https://github.com/powerline/powerline.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -52,6 +54,8 @@ colorscheme Tomorrow-Night
 set number
 set guioptions+=e
 set mouse=a
+set encoding=utf-8
+set guifont=Monaco
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
@@ -72,3 +76,5 @@ function! s:CloseIfOnlyNerdTreeLeft()
      endif
   endif
 endfunction
+
+let g:Powerline_symbols = 'fancy'
