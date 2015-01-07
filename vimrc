@@ -55,7 +55,9 @@ set number
 set guioptions+=e
 set mouse=a
 set encoding=utf-8
-set guifont=Monaco
+set guifont=Droid\ Sans\ for\ Powerline
+set ignorecase
+set smartcase
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
