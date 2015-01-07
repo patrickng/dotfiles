@@ -10,10 +10,24 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'benmills/vimux'
-" Plugin 'https://github.com/bling/vim-airline'
-" Plugin 'https://github.com/Lokaltog/vim-powerline.git'
-Plugin 'https://github.com/powerline/powerline.git'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-ragtag'
+Plugin 'skalnik/vim-vroom'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'pangloss/vim-javascript'
+Plugin 'powerline/powerline'
+Plugin 'scrooloose/nerdtree'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -79,4 +93,4 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
