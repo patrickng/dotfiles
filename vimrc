@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype plugin indent on                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,6 +28,9 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'pangloss/vim-javascript'
 Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'jeetsukimaran/vim-buffergator'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -72,6 +75,21 @@ set encoding=utf-8
 set guifont=Droid\ Sans\ for\ Powerline
 set ignorecase
 set smartcase
+set splitright
+set splitbelow
+set hidden
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+set hlsearch
+set incsearch
+set history=1000
+set undolevels=1000
+set visualbell
+set noerrorbells
+set title
+set nobackup
+set noswapfile
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
@@ -79,7 +97,6 @@ noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
-
 
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
@@ -94,3 +111,5 @@ function! s:CloseIfOnlyNerdTreeLeft()
 endfunction
 
 let g:airline_powerline_fonts = 1
+let g:nerdtree_tabs_open_on_console_startup=1
+map <C-n> :NERDTreeTabsToggle<CR>
