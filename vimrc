@@ -29,7 +29,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'jeetsukimaran/vim-buffergator'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
