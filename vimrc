@@ -90,6 +90,7 @@ set noerrorbells
 set title
 set nobackup
 set noswapfile
+set clipboard=unnamed
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
