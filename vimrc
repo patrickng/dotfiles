@@ -99,6 +99,15 @@ noremap <leader>yy "*Y
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
+" Command-T force remap
+nnoremap <silent> <C-t> :CommandT<CR>
+nnoremap <silent> <C-b> :CommandTBuffer<CR>
+
+if &term =~ "xterm" || &term =~ "screen"
+    let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+  endif
+
+"NERDTree
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
 function! s:CloseIfOnlyNerdTreeLeft()
