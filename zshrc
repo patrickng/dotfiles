@@ -48,19 +48,13 @@ source $ZSH/oh-my-zsh.sh
 unsetopt SHARE_HISTORY
 
 # Customize to your needs...
-export http_proxy="http://127.0.0.1:3128"
-export https_proxy="http://127.0.0.1:3128"
 
 alias subl='open -a "Sublime Text"'
 alias subl2='open -a "Sublime Text 2"'
 alias ll='ls -la'
-alias regenkeys='cntlm -H -u png2 -d CORP'
-alias editcntlm='vim /usr/local/etc/cntlm.conf'
 alias install-deps='npm install && bower install'
 alias vundle='vim +PluginInstall +qall'
 alias vim='mvim -v'
-alias deploy-all='mina deploy && mina deploy to=prototype && mina deploy:cleanup && mina deploy:cleanup to=prototype'
-alias refresh_capc_db='dropdb capc_beta && createdb capc_beta && scp ubuntu@54.210.14.90:/home/web/capc/backups/capc_beta.sql.bz2 backups/. && bzcat backups/capc_beta.sql.bz2 | psql capc_beta'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -73,10 +67,4 @@ function server {
 
 export PATH="$GEM_HOME/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a she    ll session *as a function*
-
-if [ -f ~/.env ]; then
-  source ~/.env
-else
-  print "404: ~/.env not found."
-fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
