@@ -40,9 +40,9 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rails ruby brew bundler gem git-extras npm rvm sublime)
+plugins=(git osx rails ruby brew bundler gem git-extras npm laravel5 sublime)
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+export PATH=$HOME/.rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:~/.composer/vendor/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 source $ZSH/oh-my-zsh.sh
 
 unsetopt SHARE_HISTORY
@@ -63,8 +63,9 @@ function server {
   open "http://localhost:${port}/" && ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 }
 
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
-export PATH="$GEM_HOME/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(rbenv init -)"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+. ~/.z\.sh

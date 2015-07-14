@@ -63,6 +63,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 autocmd vimenter * NERDTree
 autocmd VimEnter * wincmd p
+autocmd FileType apache set commentstring=#\ %s
 
 syntax enable
 set expandtab
