@@ -42,7 +42,7 @@ DISABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx rails ruby brew bundler gem git-extras npm laravel5 sublime)
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$HOME/.rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:~/.composer/vendor/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+export PATH=/usr/local/share/npm/bin:/usr/local/bin:~/.composer/vendor/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 source $ZSH/oh-my-zsh.sh
 
 unsetopt SHARE_HISTORY
@@ -66,6 +66,6 @@ function server {
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 . ~/.z\.sh
