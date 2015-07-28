@@ -30,6 +30,8 @@ Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'wincent/command-t'
+Plugin 'valloric/youcompleteme'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -66,7 +68,7 @@ autocmd VimEnter * wincmd p
 autocmd FileType apache set commentstring=#\ %s
 
 syntax enable
-set expandtab
+" set expandtab
 filetype indent on
 colorscheme Tomorrow-Night
 set number
@@ -92,6 +94,9 @@ set title
 set nobackup
 set noswapfile
 set clipboard=unnamed
+
+set tabstop=4
+set shiftwidth=4
 
 " Yank text to the OS X clipboard
 noremap <leader>y "*y

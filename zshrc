@@ -51,7 +51,7 @@ unsetopt SHARE_HISTORY
 
 alias subl='open -a "Sublime Text"'
 alias subl2='open -a "Sublime Text 2"'
-alias ll='ls -la'
+alias ll='ls -lha'
 alias install-deps='npm install && bower install'
 alias vundle='vim +PluginInstall +qall'
 alias vim='mvim -v'
