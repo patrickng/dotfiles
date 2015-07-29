@@ -1,5 +1,4 @@
 set nocompatible              " be iMproved, required
-filetype plugin indent on                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -32,6 +31,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'wincent/command-t'
 Plugin 'valloric/youcompleteme'
+Plugin 'raimondi/delimitmate'
+Plugin 'rking/ag.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -66,6 +67,13 @@ filetype plugin indent on    " required
 autocmd vimenter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd FileType apache set commentstring=#\ %s
+
+" Uncomment the following to have Vim jump to the last position when                                                       
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 syntax enable
 " set expandtab
@@ -103,7 +111,7 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 
 " Command-T force remap
 nnoremap <silent> <C-t> :CommandT<CR>
@@ -126,6 +134,14 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
 let g:airline_powerline_fonts = 1
 let g:nerdtree_tabs_open_on_console_startup=1
-map <C-n> :NERDTreeTabsToggle<CR>
+
+let g:ag_working_path_mode="r"
+if executable('ag')
+    " Note we extract the column as well as the file and line number
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+endif
