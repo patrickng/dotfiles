@@ -9,7 +9,8 @@ ZSH_THEME="robbyrussell"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-# alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimconfig="vim ~/.vim_runtime/my_configs.vim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

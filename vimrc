@@ -117,6 +117,14 @@ noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 nnoremap <silent> <C-t> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
 
+
+" Jump around splits without hitting Ctrl-w
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
 if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
   endif
