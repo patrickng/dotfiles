@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -9,12 +9,17 @@ set splitright
 set splitbelow
 
 set undolevels=50000
-set mouse=a
-
 set clipboard=unnamed
 
 nnoremap <silent> <Leader>r :source ~/.vim_runtime/my_configs.vim<CR> 
+nnoremap <silent> <Leader>yy :%y+<CR>
 
+
+if &term =~ "xterm" || &term =~ "screen"
+    let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+    let g:CommandTSelectNextMap = ['<C-j>', '<ESC>OB']
+    let g:CommandTSelectPrevMap = ['<C-k>', '<ESC>OA']
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
