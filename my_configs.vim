@@ -79,7 +79,8 @@ let g:CommandTSmartCase = 1
 " => vim-startify 
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:startify_custom_header = map(split(system('fortune | cowthink '), '\n'), '"   ". v:val') + ['',''] 
+let g:startify_custom_header = map(split(system('fortune | cowsay '), '\n'), '"   ". v:val') + ['',''] 
+noremap <silent> <Leader>S :NERDTreeClose<CR>:SSave<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => editorconfig
@@ -91,4 +92,4 @@ let g:EditorConfig_core_mode = 'external_command'
 " => YankRing
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <silent> '\<C-p>' :YRShow<CR>
+noremap <silent> <Leader>r :YRShow<CR>
