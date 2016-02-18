@@ -81,4 +81,14 @@ let g:CommandTSmartCase = 1
 
 let g:startify_custom_header = map(split(system('fortune | cowthink '), '\n'), '"   ". v:val') + ['',''] 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => editorconfig
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let g:EditorConfig_core_mode = 'external_command'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YankRing
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <silent> '\<C-p>' :YRShow<CR>
