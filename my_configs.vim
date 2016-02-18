@@ -64,3 +64,21 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
 let g:tagbar_width=32                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle<CR>       " Display panel with y (or ,y)
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => command-t 
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:CommandTMaxHeight = 30
+let g:CommandTMaxFiles = 500000
+let g:CommandTInputDebounce = 200
+let g:CommandTFileScanner = 'watchman'
+let g:CommandTMaxCachedDirectories = 10
+let g:CommandTSmartCase = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-startify 
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:startify_custom_header = map(split(system('fortune | cowthink '), '\n'), '"   ". v:val') + ['',''] 
+
+let g:EditorConfig_core_mode = 'external_command'

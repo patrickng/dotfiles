@@ -51,11 +51,11 @@ unsetopt SHARE_HISTORY
 # Customize to your needs...
 
 alias subl='open -a "Sublime Text"'
-alias subl2='open -a "Sublime Text 2"'
 alias ll='ls -lha'
 alias install-deps='npm install && bower install'
 alias vundle='vim +PluginInstall +qall'
 alias vim='mvim -v'
+alias f='open -a "Finder"'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -70,3 +70,6 @@ source $(brew --prefix nvm)/nvm.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 . ~/.z\.sh
+stty -ixon
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
