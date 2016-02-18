@@ -93,3 +93,9 @@ let g:EditorConfig_core_mode = 'external_command'
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 noremap <silent> <Leader>r :YRShow<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => bufExplorer
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+noremap <Leader>b :BufExplorer<CR>
