@@ -56,6 +56,8 @@ alias install-deps='npm install && bower install'
 alias vundle='vim +PluginInstall +qall'
 alias vim='mvim -v'
 alias f='open -a "Finder"'
+alias base='tmux attach -t base || tmux new -s base'
+alias alpha='tmux attach -t alpha || tmux new -s alpha'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -68,6 +70,8 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
 . ~/.z\.sh
 stty -ixon

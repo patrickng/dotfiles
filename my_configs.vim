@@ -11,7 +11,7 @@ set splitbelow
 set undolevels=50000
 set clipboard=unnamed
 
-nnoremap <silent> <Leader>r :source ~/.vim_runtime/my_configs.vim<CR> 
+nnoremap <silent> <Leader>E :source ~/.vim_runtime/my_configs.vim<CR> 
 nnoremap <silent> <Leader>yy :%y+<CR>
 
 
@@ -92,10 +92,8 @@ let g:EditorConfig_core_mode = 'external_command'
 " => YankRing
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-noremap <silent> <Leader>r :YRShow<CR>
+noremap <silent> <Leader>R :YRShow<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => bufExplorer
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-noremap <Leader>b :BufExplorer<CR>
+let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
+let g:syntastic_scss_sass_quiet_messages = {
+    \ "regex": 'File to import not found or unreadable', }
