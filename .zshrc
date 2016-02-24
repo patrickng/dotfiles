@@ -41,7 +41,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rails ruby brew bundler gem git-extras npm laravel5 sublime)
+plugins=(git osx rails ruby brew bundler gem git-extras npm laravel5 sublime wd)
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=/usr/local/share/npm/bin:/usr/local/bin:~/.composer/vendor/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 source $ZSH/oh-my-zsh.sh
@@ -55,9 +55,9 @@ alias ll='ls -lha'
 alias install-deps='npm install && bower install'
 alias vundle='vim +PluginInstall +qall'
 alias vim='mvim -v'
-alias f='open -a "Finder"'
 alias base='tmux attach -t base || tmux new -s base'
 alias alpha='tmux attach -t alpha || tmux new -s alpha'
+alias kappa='tmux attach -t kappa || tmux new -s kappa'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
