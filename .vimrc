@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set encoding=utf-8
 set runtimepath+=~/.vim_runtime
 
 source ~/.vim_runtime/vimrcs/pre_definitions.vim

@@ -10,7 +10,11 @@ set splitbelow
 
 set undolevels=50000
 set clipboard=unnamed
-
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
 nnoremap <silent> <Leader>E :source ~/.vim_runtime/my_configs.vim<CR> 
 nnoremap <silent> <Leader>yy :%y+<CR>
 
@@ -97,3 +101,13 @@ noremap <silent> <Leader>R :YRShow<CR>
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 let g:syntastic_scss_sass_quiet_messages = {
     \ "regex": 'File to import not found or unreadable', }
+
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': '',
+  \ }
