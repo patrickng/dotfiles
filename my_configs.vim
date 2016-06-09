@@ -17,7 +17,8 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
 nnoremap <silent> <Leader>E :source ~/.vim_runtime/my_configs.vim<CR> 
 nnoremap <silent> <Leader>yy :%y+<CR>
-
+nnoremap <silent> <Leader>JC :let g:ctrlp_working_path_mode = 0<CR>
+nnoremap <silent> <Leader>JR :let g:ctrlp_working_path_mode = 'ra'<CR>
 
 if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
@@ -103,6 +104,10 @@ let g:syntastic_scss_sass_quiet_messages = {
     \ "regex": 'File to import not found or unreadable', }
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CtrlP
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf     " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -111,3 +116,12 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': '',
   \ }
+let g:ctrlp_working_path_mode = 'ra'
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
