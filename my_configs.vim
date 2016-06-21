@@ -15,6 +15,7 @@ set shiftwidth=4
 set expandtab
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
+set mouse=a
 nnoremap <silent> <Leader>E :source ~/.vim_runtime/my_configs.vim<CR> 
 nnoremap <silent> <Leader>yy :%y+<CR>
 nnoremap <silent> <Leader>JC :let g:ctrlp_working_path_mode = 0<CR>
