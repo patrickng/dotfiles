@@ -26,17 +26,21 @@ if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTSelectPrevMap = ['<C-k>', '<ESC>OA']
 endif
 
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 try
-    colorscheme Tomorrow-Night
+    colorscheme lucius
 catch
 endtry
 
 set guifont=Droid\ Sans\ for\ Powerline
-
+let g:mirodark_disable_color_approximation=1
+let g:lucius_contrast_bg='high'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Formatting
@@ -109,10 +113,10 @@ let g:syntastic_scss_sass_quiet_messages = {
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf     " MacOSX/Linux
+let g:ctrlp_show_hidden = 1
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': '',
   \ }
@@ -120,7 +124,7 @@ let g:ctrlp_working_path_mode = 'ra'
 
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor 
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'

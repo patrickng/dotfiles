@@ -11,6 +11,8 @@ ZSH_THEME="robbyrussell"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vimconfig="vim ~/.vim_runtime/my_configs.vim"
+alias sshconfig="vim ~/.ssh/config"
+alias tmuxconfig="vim ~/.tmux.conf"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -41,7 +43,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rails ruby brew bundler gem git-extras npm laravel5 sublime wd)
+plugins=(git osx rails ruby brew bundler gem git-extras npm laravel5 wd)
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=/usr/local/share/npm/bin:/usr/local/bin:~/.composer/vendor/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 source $ZSH/oh-my-zsh.sh
@@ -66,16 +68,16 @@ function server {
   open "http://localhost:${port}/" && ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 }
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 eval "$(thefuck --alias)"
-
-. ~/.z\.sh
+eval "$(fasd --init auto)"
 stty -ixon
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
