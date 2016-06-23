@@ -20,6 +20,9 @@ nnoremap <silent> <Leader>E :source ~/.vim_runtime/my_configs.vim<CR>
 nnoremap <silent> <Leader>yy :%y+<CR>
 nnoremap <silent> <Leader>JC :let g:ctrlp_working_path_mode = 0<CR>
 nnoremap <silent> <Leader>JR :let g:ctrlp_working_path_mode = 'ra'<CR>
+ino jj <esc>
+cno jj <c-c>
+vno v <esc>
 
 if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
@@ -40,8 +43,8 @@ catch
 endtry
 
 set guifont=Droid\ Sans\ for\ Powerline
-let g:mirodark_disable_color_approximation=1
 let g:lucius_contrast_bg='high'
+let g:lucius_contrast='high'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Formatting
@@ -62,7 +65,7 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 " => vim-airline config (force color)
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:airline_theme="tomorrow"
+let g:airline_theme="lucius"
 let g:airline_powerline_fonts = 1
 
 
@@ -99,17 +102,6 @@ noremap <silent> <Leader>S :NERDTreeClose<CR>:SSave<CR>
 let g:EditorConfig_core_mode = 'external_command'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YankRing
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-noremap <silent> <Leader>R :YRShow<CR>
-
-let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
-let g:syntastic_scss_sass_quiet_messages = {
-    \ "regex": 'File to import not found or unreadable', }
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -126,7 +118,7 @@ let g:ctrlp_working_path_mode = 'ra'
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor 
-
+  let g:ackprg = 'ag --vimgrep'
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
