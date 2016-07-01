@@ -16,6 +16,7 @@ set expandtab
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
 set mouse=a
+set macmeta
 nnoremap <silent> <Leader>E :source ~/.vim_runtime/my_configs.vim<CR> 
 nnoremap <silent> <Leader>yy :%y+<CR>
 nnoremap <silent> <Leader>JC :let g:ctrlp_working_path_mode = 0<CR>
@@ -32,6 +33,7 @@ endif
 
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
+let g:ycm_server_python_interpreter = '/Users/patrickng/.pyenv/shims/python'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
